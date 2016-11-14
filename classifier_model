@@ -1,0 +1,265 @@
+<?php
+
+//for each of the 10 responses to be classified, across 12 strategies
+//we store the classification for each response within a category, within
+//and array and insert this into the user_classication table
+//we can then match classification responses per category
+//although in future versions, individual tables for each category should be
+//considered in order to reduce the size of the user_classification responses
+class classifier_model extends CI_Model {
+
+    function add_classification() {
+        $submission = array(
+            'username' => $this->session->userdata('username'),
+            'classification0' => $this->input->post('classification0'),
+            'classification1' => $this->input->post('classification1'),
+            'classification2' => $this->input->post('classification2'),
+            'classification3' => $this->input->post('classification3'),
+            'classification4' => $this->input->post('classification4'),
+            'classification5' => $this->input->post('classification5'),
+            'classification6' => $this->input->post('classification6'),
+            'classification7' => $this->input->post('classification7'),
+            'classification8' => $this->input->post('classification8'),
+            'classification9' => $this->input->post('classification9')
+        );
+
+        $this->db->insert('user_classification', $submission);
+    }
+
+    function add_user_classification() {
+        $submission = array(
+            'category' => $this->input->post('category'),
+            'username' => $this->session->userdata('username'),
+            'classification0' => $this->input->post('classification0'),
+            'classification1' => $this->input->post('classification1'),
+            'classification2' => $this->input->post('classification2'),
+            'classification3' => $this->input->post('classification3'),
+            'classification4' => $this->input->post('classification4'),
+            'classification5' => $this->input->post('classification5'),
+            'classification6' => $this->input->post('classification6'),
+            'classification7' => $this->input->post('classification7'),
+            'classification8' => $this->input->post('classification8'),
+            'classification9' => $this->input->post('classification9')
+        );
+        $this->db->insert('user_classification', $submission);
+    }
+
+    function add_F_classification() {
+        $submission = array(
+            'username' => $this->session->userdata('username'),
+            'classification0' => $this->input->post('classification0'),
+            'classification1' => $this->input->post('classification1'),
+            'classification2' => $this->input->post('classification2'),
+            'classification3' => $this->input->post('classification3'),
+            'classification4' => $this->input->post('classification4'),
+            'classification5' => $this->input->post('classification5'),
+            'classification6' => $this->input->post('classification6'),
+            'classification7' => $this->input->post('classification7'),
+            'classification8' => $this->input->post('classification8'),
+            'classification9' => $this->input->post('classification9')
+        );
+
+        $this->db->insert('F_classification', $submission);
+    }
+
+    function add_Fs_classification() {
+        $submission = array(
+            'username' => $this->session->userdata('username'),
+            'classification0' => $this->input->post('classification0'),
+            'classification1' => $this->input->post('classification1'),
+            'classification2' => $this->input->post('classification2'),
+            'classification3' => $this->input->post('classification3'),
+            'classification4' => $this->input->post('classification4'),
+            'classification5' => $this->input->post('classification5'),
+            'classification6' => $this->input->post('classification6'),
+            'classification7' => $this->input->post('classification7'),
+            'classification8' => $this->input->post('classification8'),
+            'classification9' => $this->input->post('classification9')
+        );
+
+        $this->db->insert('Fs_classification', $submission);
+    }
+
+    function add_PF_classification() {
+        $submission = array(
+            'username' => $this->session->userdata('username'),
+            'classification0' => $this->input->post('classification0'),
+            'classification1' => $this->input->post('classification1'),
+            'classification2' => $this->input->post('classification2'),
+            'classification3' => $this->input->post('classification3'),
+            'classification4' => $this->input->post('classification4'),
+            'classification5' => $this->input->post('classification5'),
+            'classification6' => $this->input->post('classification6'),
+            'classification7' => $this->input->post('classification7'),
+            'classification8' => $this->input->post('classification8'),
+            'classification9' => $this->input->post('classification9')
+        );
+
+        $this->db->insert('PF_classification', $submission);
+    }
+
+    function add_PFs_classification() {
+        $submission = array(
+            'username' => $this->session->userdata('username'),
+            'classification0' => $this->input->post('classification0'),
+            'classification1' => $this->input->post('classification1'),
+            'classification2' => $this->input->post('classification2'),
+            'classification3' => $this->input->post('classification3'),
+            'classification4' => $this->input->post('classification4'),
+            'classification5' => $this->input->post('classification5'),
+            'classification6' => $this->input->post('classification6'),
+            'classification7' => $this->input->post('classification7'),
+            'classification8' => $this->input->post('classification8'),
+            'classification9' => $this->input->post('classification9')
+        );
+
+        $this->db->insert('PFs_classification', $submission);
+    }
+
+    function add_FF_classification() {
+        $submission = array(
+            'username' => $this->session->userdata('username'),
+            'classification0' => $this->input->post('classification0'),
+            'classification1' => $this->input->post('classification1'),
+            'classification2' => $this->input->post('classification2'),
+            'classification3' => $this->input->post('classification3'),
+            'classification4' => $this->input->post('classification4'),
+            'classification5' => $this->input->post('classification5'),
+            'classification6' => $this->input->post('classification6'),
+            'classification7' => $this->input->post('classification7'),
+            'classification8' => $this->input->post('classification8'),
+            'classification9' => $this->input->post('classification9')
+        );
+
+        $this->db->insert('FF_classification', $submission);
+    }
+
+    function add_FFs_classification() {
+        $submission = array(
+            'username' => $this->session->userdata('username'),
+            'classification0' => $this->input->post('classification0'),
+            'classification1' => $this->input->post('classification1'),
+            'classification2' => $this->input->post('classification2'),
+            'classification3' => $this->input->post('classification3'),
+            'classification4' => $this->input->post('classification4'),
+            'classification5' => $this->input->post('classification5'),
+            'classification6' => $this->input->post('classification6'),
+            'classification7' => $this->input->post('classification7'),
+            'classification8' => $this->input->post('classification8'),
+            'classification9' => $this->input->post('classification9')
+        );
+
+        $this->db->insert('FFs_classification', $submission);
+    }
+
+    function add_As_classification() {
+        $submission = array(
+            'username' => $this->session->userdata('username'),
+            'classification0' => $this->input->post('classification0'),
+            'classification1' => $this->input->post('classification1'),
+            'classification2' => $this->input->post('classification2'),
+            'classification3' => $this->input->post('classification3'),
+            'classification4' => $this->input->post('classification4'),
+            'classification5' => $this->input->post('classification5'),
+            'classification6' => $this->input->post('classification6'),
+            'classification7' => $this->input->post('classification7'),
+            'classification8' => $this->input->post('classification8'),
+            'classification9' => $this->input->post('classification9')
+        );
+
+        $this->db->insert('As_classification', $submission);
+    }
+
+    function add_FUN_classification() {
+        $submission = array(
+            'username' => $this->session->userdata('username'),
+            'classification0' => $this->input->post('classification0'),
+            'classification1' => $this->input->post('classification1'),
+            'classification2' => $this->input->post('classification2'),
+            'classification3' => $this->input->post('classification3'),
+            'classification4' => $this->input->post('classification4'),
+            'classification5' => $this->input->post('classification5'),
+            'classification6' => $this->input->post('classification6'),
+            'classification7' => $this->input->post('classification7'),
+            'classification8' => $this->input->post('classification8'),
+            'classification9' => $this->input->post('classification9')
+        );
+
+        $this->db->insert('FUN_classification', $submission);
+    }
+
+    function add_INC_classification() {
+        $submission = array(
+            'username' => $this->session->userdata('username'),
+            'classification0' => $this->input->post('classification0'),
+            'classification1' => $this->input->post('classification1'),
+            'classification2' => $this->input->post('classification2'),
+            'classification3' => $this->input->post('classification3'),
+            'classification4' => $this->input->post('classification4'),
+            'classification5' => $this->input->post('classification5'),
+            'classification6' => $this->input->post('classification6'),
+            'classification7' => $this->input->post('classification7'),
+            'classification8' => $this->input->post('classification8'),
+            'classification9' => $this->input->post('classification9')
+        );
+
+        $this->db->insert('INC_classification', $submission);
+    }
+
+    function add_SUP_classification() {
+        $submission = array(
+            'username' => $this->session->userdata('username'),
+            'classification0' => $this->input->post('classification0'),
+            'classification1' => $this->input->post('classification1'),
+            'classification2' => $this->input->post('classification2'),
+            'classification3' => $this->input->post('classification3'),
+            'classification4' => $this->input->post('classification4'),
+            'classification5' => $this->input->post('classification5'),
+            'classification6' => $this->input->post('classification6'),
+            'classification7' => $this->input->post('classification7'),
+            'classification8' => $this->input->post('classification8'),
+            'classification9' => $this->input->post('classification9')
+        );
+
+        $this->db->insert('SUP_classification', $submission);
+    }
+
+    function add_OO_classification() {
+        $submission = array(
+            'username' => $this->session->userdata('username'),
+            'classification0' => $this->input->post('classification0'),
+            'classification1' => $this->input->post('classification1'),
+            'classification2' => $this->input->post('classification2'),
+            'classification3' => $this->input->post('classification3'),
+            'classification4' => $this->input->post('classification4'),
+            'classification5' => $this->input->post('classification5'),
+            'classification6' => $this->input->post('classification6'),
+            'classification7' => $this->input->post('classification7'),
+            'classification8' => $this->input->post('classification8'),
+            'classification9' => $this->input->post('classification9')
+        );
+
+        $this->db->insert('OO_classification', $submission);
+    }
+
+    function add_TNO_classification() {
+        $submission = array(
+            'username' => $this->session->userdata('username'),
+            'classification0' => $this->input->post('classification0'),
+            'classification1' => $this->input->post('classification1'),
+            'classification2' => $this->input->post('classification2'),
+            'classification3' => $this->input->post('classification3'),
+            'classification4' => $this->input->post('classification4'),
+            'classification5' => $this->input->post('classification5'),
+            'classification6' => $this->input->post('classification6'),
+            'classification7' => $this->input->post('classification7'),
+            'classification8' => $this->input->post('classification8'),
+            'classification9' => $this->input->post('classification9')
+        );
+
+        $this->db->insert('TNO_classification', $submission);
+    }
+
+}
+
+?>
