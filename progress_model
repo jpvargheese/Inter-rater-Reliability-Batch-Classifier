@@ -1,0 +1,43 @@
+<?php
+
+class progress_model extends CI_Model {
+
+    //ignore this function for now
+    //this is a debug function for future development
+    /*function status() {
+        $user = $this->session->userdata('username');
+        $this->db->where('username', $user);
+        $this->db->where('category', 'F');
+    }*/
+
+    function status_check() {
+        //create the data array outside the scope of loop so we can populate it
+        //and return it to the controller
+        $data = array();
+        //we should only be running the status_check prior to classifying, which
+        //means the user is logged in, so we can get the username from the session
+        //which we need to check, as in which user has classified what category so far
+        $user = $this->session->userdata('username');
+        //hard coded categories, this should be resolved for updated versions as it is 
+        //not good practice although sufficient for this version
+        $category = array('F', 'PF', 'FF', 'Fs', 'PFs', 'FFs', 'As', 'FUN', 'INC', 'SUP', 'OO', 'TNO');
+        //now loop through user_classifications for each category for the current user and check if any rows
+        //exist for the selected category
+        for ($i = 0; $i < 12; $i++) {
+            $this->db->where('username', $user);
+            $this->db->where('category', $category[$i]);
+            //select user [from the sessions] from user_classification where category is
+            $query = $this->db->get('user_classification');
+            if ($query->num_rows() ==1) {
+                $data[$i] = "Completed";
+            } else {
+                $data[$i] = "To be classified";
+            }
+        }
+
+        return $data;
+    }
+
+}
+
+?>
